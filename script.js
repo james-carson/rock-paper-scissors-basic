@@ -4,10 +4,8 @@ function getComputerChoice() {
     const computerChoice = possibleChoices[choiceNumber];
     return computerChoice;
 }
-// This works - checked with console.log
 
-// For testing:
-// getComputerChoice()
+// This does work - how to move these variables in?
 
 // 2) Get player's choice through a prompt
 
@@ -33,60 +31,67 @@ function getPlayerChoice() {
 // Putting this here for testing purposes:
 // formatPlayerChoice()
 
-console.log(computerChoice)
-console.log(playerChoice)
-
 // 4) Play a game. Nested IF functions x 3. Compare two selections and return a declaration.
 
 let playerScore = 0
 let computerScore = 0
 
+let computerChoice = getComputerChoice()
+console.log(computerChoice)
+let playerChoice = getPlayerChoice()
+console.log(playerChoice);
+
 function playRound(playerChoice, computerChoice) {
-    
-    getComputerChoice()
-    console.log()
 
-    getPlayerChoice()
-    console.log(playerChoice)
-    
-    if playerChoice === "Rock" {
-        if computerChoice === "Rock" {
+    let result = null
+
+    if (playerChoice === "Rock") {
+        if (computerChoice === "Rock") {
             alert("It's a draw!")
+            return result = "draw"
         }
-        else if computerChoice === "Paper" {
+        else if (computerChoice === "Paper") {
             alert("You lose! Paper beats Rock!")
+            return result = "lose"
         }
-        else if computerChoice === "Scissors" {
+        else if (computerChoice === "Scissors") {
             alert("You win! Rock beats Paper!")
+            return result = "win"
         }
         else{
             alert("Something fucked up somewhere");
         }
 
     }
-    else if playerChoice === "Paper" {
-        if computerChoice === "Rock" {
+    else if (playerChoice === "Paper") {
+        if (computerChoice === "Rock") {
             alert("You win! Paper beats Rock!")
+            return result = "win"
         }
-        else if computerChoice === "Paper" {
+        else if (computerChoice === "Paper") {
             alert("It's a draw!")
+            return result = "draw"
         }
-        else if computerChoice === "Scissors" {
+        else if (computerChoice === "Scissors") {
             alert("You lose! Scissors beats Paper!")
+            return result = "lose"
         }
         else{
             alert("Something fucked up somewhere");
         }
     }
-    else if playerChoice === "Scissors" {
-        if computerChoice === "Rock" {
+    else if (playerChoice === "Scissors") {
+        if (computerChoice === "Rock") {
             alert("You lose! Rock beats Scissors!")
+            return result = "lose"
         }
-        else if computerChoice === "Paper" {
+        else if (computerChoice === "Paper") {
             alert("You win! Scissors beats Paper!")
+            return result = "win"
         }
-        else if computerChoice === "Scissors" {
+        else if (computerChoice === "Scissors") {
             alert("It's a draw!")
+            return result = "draw"
         }
         else{
             alert("Something fucked up somewhere");
@@ -95,6 +100,11 @@ function playRound(playerChoice, computerChoice) {
     else {
         alert("Something fucked up somewhere");
     }
+
+    console.log(result)
+    
 }
+
+playRound(playerChoice, computerChoice)
 
 // 5) Create playGame function. Ensure that there are 5 rounds and a winner is reported at the end.
