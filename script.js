@@ -1,18 +1,9 @@
 function getComputerChoice() {
     let possibleChoices = ["Rock", "Paper", "Scissors"];
-    const choiceNumber = Math.floor(Math.random() * 3);
+    const choiceNumber = Math.floor(Math.random() * possibleChoices.length);
     const computerChoice = possibleChoices[choiceNumber];
     return computerChoice;
 }
-
-// This does work - how to move these variables in?
-
-// 2) Get player's choice through a prompt
-
-// This has been moved to the function below!
-
-
-// 3) Format player's choice to ensure the correct case
 
 function getPlayerChoice() {
     let initialChoice = prompt("Rock, Paper or Scissors?");
@@ -28,13 +19,7 @@ function getPlayerChoice() {
     return playerChoice;
 }
 
-// Putting this here for testing purposes:
-// formatPlayerChoice()
-
-// 4) Play a game. Nested IF functions x 3. Compare two selections and return a declaration.
-
 function playRound(playerChoice, computerChoice) {
-
     if (playerChoice === "Rock") {
         if (computerChoice === "Rock") {
             alert("It's a draw!");
@@ -52,9 +37,8 @@ function playRound(playerChoice, computerChoice) {
             return result;
         }
         else{
-            alert("Something fucked up somewhere. You probably entered something incorrectly.");
+            alert("Something fucked up somewhere. You probably entered something incorrectly. Reload and start again.");
         }
-
     }
     else if (playerChoice === "Paper") {
         if (computerChoice === "Rock") {
@@ -73,7 +57,7 @@ function playRound(playerChoice, computerChoice) {
             return result;
         }
         else{
-            alert("Something fucked up somewhere. You probably entered something incorrectly.");
+            alert("Something fucked up somewhere. You probably entered something incorrectly. Reload and start again.");
         }
     }
     else if (playerChoice === "Scissors") {
@@ -96,15 +80,14 @@ function playRound(playerChoice, computerChoice) {
             alert("Something fucked up somewhere. You probably entered something incorrectly.");
         }
     }
+    else if (playerChoice === null || 0 || undefined) {
+        alert("You have to actually write something... Reload and start again.")
+    }
     else {
-        alert("Something fucked up somewhere. You probably entered something incorrectly.");
+        alert("Something fucked up somewhere. You probably entered something incorrectly. Reload and start again.");
     }
 
 }
-
-// Need to work out logging of result now.
-
-// 5) Create playGame function. Ensure that there are 5 rounds and a winner is reported at the end.
 
 function playGame() {
     // Set score
@@ -116,45 +99,124 @@ function playGame() {
     let playerChoice = getPlayerChoice();
 
     // Game 1
-    playRound(playerChoice, computerChoice);
+    let result = playRound(playerChoice, computerChoice);
+    console.log(result);
 
     // Update Score 1
+
+    if (result === "win") {
+        ++playerScore;
+    }
+    else if (result === "lose") {
+        ++computerScore;
+    }
+    else if (result === "draw") {}
+    else {
+        alert("Uh oh. Something went wrong with scoring. Reload and start again.");
+    }
+
+    alert("The score after Round 1 is " + playerScore + " to you and " + computerScore + " to the computer.");
 
     // Select R/P/S 2
     computerChoice = getComputerChoice();
     playerChoice = getPlayerChoice();
 
     // Game 2
-    playRound(playerChoice, computerChoice);
+    result = playRound(playerChoice, computerChoice);
 
     // Update Score 2
+
+    if (result === "win") {
+        ++playerScore;
+    }
+    else if (result === "lose") {
+        ++computerScore;
+    }
+    else if (result === "draw") {}
+    else {
+        alert("Uh oh. Something went wrong with scoring. Reload and start again.");
+    }
+
+    alert("The score after Round 2 is " + playerScore + " to you and " + computerScore + " to the computer.");
 
     // Select R/P/S 3
     computerChoice = getComputerChoice();
     playerChoice = getPlayerChoice();
 
     // Game 3
-    playRound(playerChoice, computerChoice);
+    result = playRound(playerChoice, computerChoice);
 
     // Update Score 3
+
+    if (result === "win") {
+        ++playerScore;
+    }
+    else if (result === "lose") {
+        ++computerScore;
+    }
+    else if (result === "draw") {}
+    else {
+        alert("Uh oh. Something went wrong with scoring. Reload and start again.");
+    }
+
+    alert("The score is after Round 3 " + playerScore + " to you and " + computerScore + " to the computer.");
 
     // Select R/P/S 4
     computerChoice = getComputerChoice();
     playerChoice = getPlayerChoice();
 
     // Game 4
-    playRound(playerChoice, computerChoice)
+    result = playRound(playerChoice, computerChoice)
 
     // Update Score 4
+
+    if (result === "win") {
+        ++playerScore;
+    }
+    else if (result === "lose") {
+        ++computerScore;
+    }
+    else if (result === "draw") {}
+    else {
+        alert("Uh oh. Something went wrong with scoring. Reload and start again.");
+    }
+
+    alert("The score after Round 4 is " + playerScore + " to you and " + computerScore + " to the computer.");
 
     // Select R/P/S 5
     computerChoice = getComputerChoice();
     playerChoice = getPlayerChoice();
 
     // Game 5
-    playRound(playerChoice, computerChoice);
+    result = playRound(playerChoice, computerChoice);
 
     // Update Score 5
+    if (result === "win") {
+        ++playerScore;
+    }
+    else if (result === "lose") {
+        ++computerScore;
+    }
+    else if (result === "draw") {}
+    else {
+        alert("Uh oh. Something went wrong with scoring. Reload and start again.");
+    }
+
+    alert("The score after Round 5 is " + playerScore + " to you and " + computerScore + " to the computer.");
+
+    // Calculate winner
+
+    if (playerScore > computerScore) {
+        alert("Well done, you beat a machine...");
+    }
+    else if (computerScore > playerScore){
+        alert("The computer won. It's clearly much cleverer than you.");
+    }
+    else if (computerScore === playerScore)
+        alert("It's a draw. How? How do you draw with a computer with no hands?")
+    else {
+        alert("Well, something has gone wrong here.")
+    }
 }
 
 playGame()
