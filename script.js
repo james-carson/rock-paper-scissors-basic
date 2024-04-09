@@ -5,19 +5,36 @@ function getComputerChoice() {
     const computerChoice = possibleChoices[choiceNumber];
     return computerChoice;
 }
+// This works - checked with console.log
 
-// Get player's choice through a prompt
 
-let initialChoice = prompt("Rock, Paper or Scissors?")
+// 2) Get player's choice through a prompt
 
-// Format player's choice to ensure the correct case
+// This has been moved to the function below!
+
+
+// 3) Format player's choice to ensure the correct case
 
 function formatPlayerChoice() {
-    
+    let initialChoice = prompt("Rock, Paper or Scissors?");
+
+    let stringStart = initialChoice[0];
+    let stringStartCaps = stringStart.toUpperCase();
+
+    let stringRemainder = initialChoice.slice(1);
+    let stringRemainderLower = stringRemainder.toLowerCase();
+
+    let formattedPlayerChoice = stringStartCaps + stringRemainderLower
+    console.log(formattedPlayerChoice)
+
+    return formattedPlayerChoice;
 }
 
-// Play a game. Nested IF functions x 3. Compare two selections and return a declaration.
+// Putting this here for testing purposes:
+formatPlayerChoice()
+
+// 4) Play a game. Nested IF functions x 3. Compare two selections and return a declaration.
 
 
 
-// Create playGame function. Ensure that there are 5 rounds and a winner is reported at the end.
+// 5) Create playGame function. Ensure that there are 5 rounds and a winner is reported at the end.
