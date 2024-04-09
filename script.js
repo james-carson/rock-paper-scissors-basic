@@ -1,5 +1,4 @@
 function getComputerChoice() {
-
     let possibleChoices = ["Rock", "Paper", "Scissors"];
     const choiceNumber = Math.floor(Math.random() * 3);
     const computerChoice = possibleChoices[choiceNumber];
@@ -7,6 +6,8 @@ function getComputerChoice() {
 }
 // This works - checked with console.log
 
+// For testing:
+getComputerChoice()
 
 // 2) Get player's choice through a prompt
 
@@ -24,17 +25,24 @@ function formatPlayerChoice() {
     let stringRemainder = initialChoice.slice(1);
     let stringRemainderLower = stringRemainder.toLowerCase();
 
-    let formattedPlayerChoice = stringStartCaps + stringRemainderLower
-    console.log(formattedPlayerChoice)
+    const playerChoice = stringStartCaps + stringRemainderLower;
 
-    return formattedPlayerChoice;
+    return playerChoice;
 }
 
 // Putting this here for testing purposes:
 formatPlayerChoice()
 
+console.log(computerChoice)
+console.log(playerChoice)
+
 // 4) Play a game. Nested IF functions x 3. Compare two selections and return a declaration.
 
+let playerScore = 0
+let computerScore = 0
 
+function playRound(playerChoice, computerChoice) {
+
+}
 
 // 5) Create playGame function. Ensure that there are 5 rounds and a winner is reported at the end.
