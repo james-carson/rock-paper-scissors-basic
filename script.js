@@ -159,7 +159,7 @@ function playGame() {
         alert("Uh oh. Something went wrong with scoring. Reload and start again.");
     }
 
-    alert("The score is after Round 3 " + playerScore + " to you and " + computerScore + " to the computer.");
+    alert("The score after Round 3 is " + playerScore + " to you and " + computerScore + " to the computer.");
 
     // Select R/P/S 4
     computerChoice = getComputerChoice();
