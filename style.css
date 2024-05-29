@@ -1,8 +1,102 @@
 body{
-    margin: 0;
+    margin: 0; border: 0; padding: 0;
+    height: 100vh;
+
     display: flex;
     flex-direction: column;
+
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    justify-content: center;
 }
 
+.header{
+    /* temporary border for spacing */
+    border: solid 2px black;
+    /* remember to delete */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 700;
+    padding: 30px 0 50px 0;
+}
+
+.main{
+    /* temporary border for spacing */
+    border: solid 2px black;
+    /* remember to delete */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.score_box_container{
+    /* temporary border for spacing */
+    border: solid 2px black;
+    /* remember to delete */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* May need to change padding */
+    padding: 30px 0 50px 0;
+    gap: 50px;
+}
+
+.player_score_box, .computer_score_box, .rounds_played_box{
+    /* temporary border for spacing */
+    border: solid 2px black;
+    /* remember to delete */
+    font-size: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.message_box{
+    /* temporary border for spacing */
+    border: solid 2px black;
+    /* remember to delete */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* May need to change padding */
+    padding: 30px 0 50px 0;
+    font-size: 30px;
+}
+
+.button_box_container{
+    /* temporary border for spacing */
+    border: solid 2px black;
+    /* remember to delete */
+    display: flex;
+    justify-content: center;
+    /* May need to change padding */
+    padding: 30px 0 50px 0;
+    /* This is temporary as it will be replaced by buttons */
+    font-size: 30px;
+    gap: 50px;
+}
+
+.rock_button_box, .paper_button_box, .scissors_button_box{
+/* temporary border for spacing */
+border: solid 2px black;
+/* remember to delete */
+}
+
+button{
+    background-color: white;
+}
+
+.footer{
+    /* temporary border for spacing */
+    border: solid 2px black;
+    /* remember to delete */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    padding: 50px 0 30px 0;
+}
