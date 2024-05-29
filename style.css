@@ -39,6 +39,10 @@ body{
     justify-content: space-between;
 }
 
+.player_score_text, .computer_score_text{
+    font-weight: bold;
+}
+
 .message_box{
     display: flex;
     flex-direction: column;
@@ -69,6 +73,10 @@ p{
 button{
     background-color: white;
     border: none;
+}
+
+button:hover{
+    background-color: rgba(211, 211, 211, 0.25);
 }
 
 .footer{
